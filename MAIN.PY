@@ -8,7 +8,7 @@ def sky(r, g, b):
     penup()
     setposition(-200, 200)
     pendown()
-    for i in range(40):#what number should be here to fill that gap
+    for i in range(42):#what number should be here to fill that gap
         pensize(10)
         setposition(-200, 200-i*10)
 
