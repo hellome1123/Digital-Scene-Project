@@ -1,0 +1,171 @@
+"""
+The code will allow Tracy to draw the geese(in different color)facing two different direction. 
+"""
+speed(0)
+#define the geese facing left 
+def left_geese():
+    pendown()
+    if user_input == 1: #this conditional statement is used to define the color of the geese
+        color("paleturquoise")
+    elif user_input == 2:
+        color("darkslategrey")
+    elif user_input == 3:
+        color("cadetblue")
+    elif user_input == 4:
+        color("steelblue")
+    elif user_input == 5:
+        color("lightblue")
+    elif user_input == 6:
+        color("powderblue")
+    elif user_input == 7:
+        color("slategrey")
+    elif user_input == 8:
+        color("pink")
+    begin_fill()
+    right(165) #neck->wing
+    forward(32)
+    left(25)
+    forward(10)
+    right(30)
+    left(15)
+    forward(20)
+    left(50)
+    forward(30)
+    right(70)
+    forward(20)
+    left(10)
+    forward(30)
+    right(140)
+    forward(70)
+    backward(30)
+    right(50)
+    circle(40,-60)#the butt 
+    left(70)
+    forward(65)
+    backward(35)
+    left(110)
+    circle(40,70)#the wing 
+    right(180)
+    forward(40)
+    right(10)
+    forward(20)
+    right(40)
+    forward(20)
+    left(10)
+    forward(20)
+    left(30)
+    forward(30)
+    right(20)
+    forward(20)
+    left(15)
+    end_fill() #complicated geese drawing process(no pattern)
+
+def right_geese(): #define the geese facing right
+    pendown()
+    backward(65)
+    forward(35)
+    right(110)
+    for i in range(4): #drawing the short line on the geese's wings 
+        circle(40,-10)
+        right(90)
+        forward(5)
+        backward(5)
+        left(90)
+    circle(40,-30) 
+    right(180)
+    backward(40)
+    left(10)
+    backward(20)
+    left(40)
+    backward(20)
+    right(10)
+    backward(20)
+    right(30)
+    backward(30)
+    left(20)
+    backward(20)
+    right(15)
+    left(165)
+    backward(32)
+    right(25)
+    backward(10)
+    left(30)
+    right(15)
+    backward(20)
+    right(50)
+    backward(30)
+    left(70)
+    backward(20)
+    right(10)
+    backward(30)
+    left(140)
+    backward(70)
+    for i in range(6): #short lines on the wings 
+        forward(5)
+        right(60)
+        forward(5)
+        backward(5)
+        left(60)
+    left(50)
+    circle(40,60)
+    right(67)
+    
+
+
+user_input=int(input("what do you want the geese facing left to be?paleturquoise=1/darkslategrey=2/cadetblue=3/steelblue=4/lightblue=5/powderblue=6/slategrey=7/pink=8"))
+#ask the user for the integar which will lead to the conditional statement 
+
+for i in range(4): #define the first line of geese's position
+    x_value=-65+i*95
+    y_value=-225+i*35
+    penup()
+    setposition(x_value, y_value)
+    left_geese()
+
+for i in range(4): #define the second line of geese's position
+    x_value=-90+i*95
+    y_value=-100+i*35
+    penup()
+    setposition(x_value, y_value) #allow the xand y value to change after each geese is drawn
+    left_geese()
+    
+
+for i in range(4): #define the third line of geese's position
+    x_value=-95+i*95
+    y_value=35+i*35
+    penup()
+    setposition(x_value, y_value)
+    left_geese()
+    
+right(10) #make the geese facing 90 degree (or nearly90degree)
+for i in range(4):
+    x_value=-110+i*95
+    y_value=165+i*25
+    penup()
+    setposition(x_value, y_value)
+    left_geese()
+left(10)
+
+left(10)
+for i in range(4):#define the position of geese facing right 
+    x_value=-100+i*95
+    y_value=-160+i*40
+    penup()#make sure geese do not leave any trace as the geese move from one position to the other
+    setposition(x_value, y_value)
+    right_geese()
+
+right(15)
+for i in range(4):#positions of second line right-geese
+    x_value=-110+i*95
+    y_value=-25+i*35
+    penup()
+    setposition(x_value, y_value)
+    right_geese()
+    
+right(5)
+for i in range(4): #positions of third line right-geese
+    x_value=-127+i*95
+    y_value=103+i*40
+    penup()
+    setposition(x_value, y_value)
+    right_geese()
